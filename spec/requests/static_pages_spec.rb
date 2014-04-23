@@ -1,76 +1,36 @@
 require 'spec_helper'
 
-describe "StaticPages" do
+describe "Static pages" do
+
+  subject { page }
 
   describe "Home page" do
+    before { visit root_path }
 
-    it "should have the content 'agroBox'" do
-      visit '/static_pages/home'
-      expect(page).to have_content('agroBox')
-    end
-
-    it "should have the base title" do
-      visit '/static_pages/home'
-      expect(page).to have_title("agroBox App")
-    end
-
-    it "should have a custom page title" do
-      visit '/static_pages/home'
-      expect(page).not_to have_title('| Home')
-    end
+    it { page.should have_content('agroBox App') }
+    it { page.has_title?(full_title('')) }
+    it { page.should_not have_title('| Home') }
   end
 
   describe "Help page" do
+    before { visit help_path }
 
-    it "should have the content 'Help'" do
-      visit '/static_pages/help'
-      expect(page).to have_content('Help')
-    end
-
-    it "should have the base title" do
-      visit '/static_pages/help'
-      expect(page).to have_title("agroBox App")
-    end
-
-    it "should have a custom page title" do
-      visit '/static_pages/help'
-      expect(page).not_to have_title('| Help')
-    end
+    it { page.should have_content('Help') } 
+    it { page.has_title?(full_title('Help')) }
   end
-  
+
   describe "About page" do
+    before { visit about_path }
 
-    it "should have the content 'About Us'" do
-      visit '/static_pages/about'
-      expect(page).to have_content('About Us')
-    end
-
-    it "should have the base title" do
-      visit '/static_pages/about'
-      expect(page).to have_title("agroBox App")
-    end
-
-    it "should have a custom title" do
-      visit '/static_pages/about'
-      expect(page).not_to have_title('| About Us')
-    end
+    it { page.should have_content('About') }
+    it { page.has_title?(full_title('About Us')) }
   end
 
   describe "Contact page" do
+    before { visit contact_path }
 
-    it "should have the content 'Contact'" do
-      visit '/static_pages/contact'
-      expect(page).to have_content('Contact')
-    end
-
-    it "should have the base title" do
-      visit '/static_pages/contact'
-      expect(page).to have_title("agroBox App")
-    end
-
-    it "should have a custom title" do
-      visit '/static_pages/contact'
-      expect(page).not_to have_title('| Contact')
-    end
+    it { page.should have_content('Contact') }
+    it { page.has_title?(full_title('Contact')) }
   end
 end
+
