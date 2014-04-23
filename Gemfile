@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.1.0'
+gem 'bootstrap-sass'
+gem 'bcrypt-ruby'
 
 group :development, :test do
 	gem 'sqlite3', '1.3.8'
@@ -22,7 +24,6 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
-gem 'bootstrap-sass'
 gem  'tilt', '1.4.1'
 
 group :doc do
