@@ -6,6 +6,7 @@ $grayMediumLight: #eaeaea;
 $grayLight: #999;
 $grayDarker: #222;
 $gray: #555;
+$blue: #3bbfce;
 
 @mixin box_sizing {
 	-moz-box-sizing: border-box;
@@ -121,33 +122,62 @@ footer {
 
  /* sidebar */
 
- aside {
- 	section {
+aside {
+  section {
+    padding: 10px 0;
+    border-top: 1px solid $gray-lighter;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
 
- 		}padding: 10px 0;
- 		border-top: 1px solid $gray-lighter;
- 		&:first-child {
- 			border: 0;
- 			padding-top: 0;
- 		}
- 		span {
- 			display: block;
- 			margin-bottom: 3px;
- 			line-height: 1;
- 		}
- 		h1 {
- 			font-size: 1.4em;
- 			text-align: left;
- 			letter-spacing: -1px;
- 			margin-bottom: 3px;
- 			margin-top: 0px;
- 		}
- 	}
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
 
- .gravatar {
- 	float: left;
- 	margin-right: 10px;
- }
+.stats {
+  overflow: auto;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid $gray-lighter;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: $blue;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar {
+    margin: 1px 1px;
+  }
+}
 
 /* forms */
 
